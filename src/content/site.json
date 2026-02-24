@@ -1,0 +1,23 @@
+{
+    "businessName": "Menuiserie [Nom]",
+    "tagline": "Menuisier artisanal — Sur mesure & pose",
+    "city": "[Ville]",
+    "serviceArea": "[Ville] et alentours",
+    "phone": "06 00 00 00 00",
+    "email": "contact@exemple.fr",
+    "ctaPrimary": "Demander un devis",
+    "heroImage": "/images/hero.jpg",
+    "aboutTitle": "Artisan menuisier à [Ville]",
+    "aboutBullets": [
+        "Artisan menuisier depuis 15 ans",
+        "Travail soigné et sur-mesure",
+        "Basé à [Ville]"
+    ],
+    "aboutImage": "/images/about.jpg",
+    "trust": [
+        "Devis gratuit",
+        "Travail soigné",
+        "Matériaux durables",
+        "Assurance décennale"
+    ]
+}

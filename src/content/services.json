@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Meubles sur mesure",
+    "desc": "Conception et fabrication adaptées à votre intérieur.",
+    "image": "/images/services/sur-mesure.jpg"
+  },
+  {
+    "title": "Dressing & rangements",
+    "desc": "Optimisation d’espace, finitions propres et durables.",
+    "image": "/images/services/dressing.jpg"
+  },
+  {
+    "title": "Terrasse bois",
+    "desc": "Pose soignée, matériaux adaptés, rendu esthétique.",
+    "image": "/images/services/terrasse.jpg"
+  }
+]
