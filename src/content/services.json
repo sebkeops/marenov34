@@ -1,17 +1,22 @@
 [
   {
-    "title": "Meubles sur mesure",
-    "desc": "Conception et fabrication adaptées à votre intérieur.",
-    "image": "/images/services/sur-mesure.jpg"
+    "title": "Portails sur mesure & automatismes",
+    "desc": "Gamme qualitative, motorisation NICE.",
+    "image": "/images/services/portails.jpg"
   },
   {
-    "title": "Dressing & rangements",
-    "desc": "Optimisation d’espace, finitions propres et durables.",
-    "image": "/images/services/dressing.jpg"
+    "title": "Clôtures",
+    "desc": "Modèles rigides — Aluminium, PVC, Bois.",
+    "image": "/images/services/clotures.jpg"
   },
   {
-    "title": "Terrasse bois",
-    "desc": "Pose soignée, matériaux adaptés, rendu esthétique.",
-    "image": "/images/services/terrasse.jpg"
+    "title": "Menuiseries aluminium sur mesure",
+    "desc": "Baies vitrées, stores, moustiquaires, portes de garage, portes d'entrée, volets roulants.",
+    "image": "/images/services/menuiseries.jpg"
+  },
+  {
+    "title": "Travaux divers",
+    "desc": "Vitrerie, tôlerie sur mesure, verrières aluminium ou acier, abris, carport.",
+    "image": "/images/services/travaux.jpg"
   }
 ]
