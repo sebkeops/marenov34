@@ -3,7 +3,9 @@
 import { useState, useEffect, useCallback } from "react";
 
 export default function PhotoGallery({ photos, familyTitle }) {
-  const [lightbox, setLightbox] = useState(null); // index de la photo ouverte
+  const [lightbox, setLightbox] = useState(null);
+  const [loaded, setLoaded] = useState(0);
+  const allLoaded = loaded >= photos.length;
 
   const open = useCallback((index, e) => {
     // Desktop uniquement : pointer = fine (souris) ou coarse (tactile)
@@ -43,6 +45,14 @@ export default function PhotoGallery({ photos, familyTitle }) {
 
   return (
     <>
+      {/* Overlay de chargement images */}
+      {!allLoaded && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#20313c]">
+          <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-white animate-spin" />
+          <p className="mt-4 text-sm font-medium text-white/60 tracking-wide">Chargement…</p>
+        </div>
+      )}
+
       {/* Galerie masonry */}
       <div className="mt-8 columns-1 gap-4 sm:columns-2 md:columns-3">
         {photos.map((photo, index) => (
@@ -56,7 +66,8 @@ export default function PhotoGallery({ photos, familyTitle }) {
               src={photo.image_url}
               alt={photo.caption || familyTitle}
               className="w-full object-cover transition duration-300 md:hover:scale-[1.02]"
-              loading="lazy"
+              onLoad={() => setLoaded((n) => n + 1)}
+              onError={() => setLoaded((n) => n + 1)}
             />
             {photo.caption && (
               <div className="px-4 py-2 text-xs text-slate-500">
