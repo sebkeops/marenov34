@@ -101,9 +101,12 @@
 
 - ✅ Métadonnées dynamiques par page (title, description)
 - ✅ `og:image` pour le partage réseaux sociaux
-- ✅ `sitemap.xml` généré automatiquement (inclut les pages réalisations)
+- ✅ `sitemap.xml` généré automatiquement (inclut les pages réalisations avec slugs)
 - ✅ `robots.txt` (bloque /admin, référence sitemap)
 - ✅ Balises Schema.org `LocalBusiness`
+- ✅ URLs slugs pour les réalisations (`/realisations/clotures` au lieu de l'UUID)
+- ✅ Pages publiques en `force-dynamic` (modifications admin visibles sans redéploiement)
+- ✅ Email artisan dans le footer
 - ⬜ Lighthouse score cible : 90+ (à mesurer après déploiement)
 
 ---
