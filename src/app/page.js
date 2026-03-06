@@ -104,10 +104,10 @@ export default async function Home() {
               <div className="hidden md:block w-px self-stretch bg-[#2c3a47]" />
               <div className="min-w-0">
                 {spotlight.title && (
-                  <p className="text-base font-semibold text-slate-800">{spotlight.title}</p>
+                  <p className="text-base font-bold text-slate-800">{spotlight.title}</p>
                 )}
                 {spotlight.text && (
-                  <p className="mt-0.5 text-sm text-slate-600">{spotlight.text}</p>
+                  <p className="mt-0.5 text-sm text-slate-800">{spotlight.text}</p>
                 )}
               </div>
               {spotlight.image_url && (
@@ -194,7 +194,8 @@ export default async function Home() {
       {artisan && (
         <section className="px-5 py-12 border-t border-white/10 bg-black/20">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-6 md:grid-cols-[180px_1fr] items-start">
+            <h2 className="text-xl font-semibold text-[#d1d2d4] mb-4">{artisan.title}</h2>
+            <div className="grid gap-6 md:grid-cols-[180px_1fr_auto] items-start">
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm h-40 md:h-44">
                 <Image
                   src={artisan.photo_url || "/images/about.jpg"}
@@ -205,13 +206,13 @@ export default async function Home() {
                 />
               </div>
 
-              <div>
-                <h2 className="text-xl font-semibold text-[#d1d2d4]">{artisan.title}</h2>
-                {artisan.bio && (
-                  <p className="mt-2 text-[#d1d2d4]">{artisan.bio}</p>
-                )}
-                {artisan.bullets && artisan.bullets.length > 0 && (
-                  <ul className="mt-3 space-y-2 text-[#c5d5df]">
+              {artisan.bio && (
+                <p className="text-[#d1d2d4]">{artisan.bio}</p>
+              )}
+
+              {artisan.bullets && artisan.bullets.length > 0 && (
+                <div className="rounded-2xl bg-blue-100/40 border border-blue-200/30 px-5 py-4">
+                  <ul className="space-y-2 text-slate-800 font-semibold">
                     {artisan.bullets.map((b, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <span className="mt-1.5 h-2 w-2 shrink-0 bg-white rounded-sm" />
@@ -219,8 +220,8 @@ export default async function Home() {
                       </li>
                     ))}
                   </ul>
-                )}
-              </div>
+                </div>
+              )}
             </div>
 
             {artisan.trust_items && artisan.trust_items.length > 0 && (
@@ -237,6 +238,20 @@ export default async function Home() {
                 ))}
               </div>
             )}
+
+            {/* Fabriqué en France */}
+            <div className="flex flex-col items-center gap-0 text-center">
+              <Image
+                src="/logo-fabrique-en-france.svg"
+                alt="Fabriqué en France"
+                width={220}
+                height={220}
+                className="object-contain"
+              />
+              <p className="text-sm text-[#c5d5df] -mt-[35px]">
+                Fournitures et matériaux 100% sélectionnés auprès de fabricants français.
+              </p>
+            </div>
           </div>
         </section>
       )}

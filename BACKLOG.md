@@ -94,6 +94,15 @@
 - ✅ Page galerie `/realisations/[id]` : lightbox desktop avec navigation ← →
 - ✅ Bloc "À la une" : label du badge éditable en admin, image supprimable
 - ✅ Admin artisan : édition inline des points forts et blocs de confiance
+- ✅ Header partagé (2 niveaux desktop + hamburger mobile) dans composant `Header.js`
+- ✅ Logo cliquable → `/`
+- ✅ Nav liens en `/#services` et `/#realisations` (fonctionnels depuis toutes les pages)
+- ✅ Dropdown mobile fond `bg-blue-100`
+- ✅ Page galerie famille : overlay loader (disparaît quand toutes les images sont chargées)
+- ✅ Bullets section artisan : petits carrés blancs
+- ✅ Bloc "À la une" : fond `bg-blue-100/40`
+- ✅ Compression images à l'upload : Canvas API → WebP, max 1920px, qualité 82%
+- ⬜ Suppression admin : supprimer le fichier Supabase Storage en même temps que l'entrée BDD
 
 ---
 
@@ -117,7 +126,7 @@
 
 - ⬜ Remplacer la couleur principale `slate-900` par le bleu marine de la marque (~`#2C3A47`)
 - ⬜ Intégrer la police Google Fonts (Raleway ou Josefin Sans)
-- ⬜ Intégrer le logo dans le header (remplacer le texte brut)
+- ✅ Intégrer le logo dans le header (composant Logo.js)
 - ⬜ Favicon aux couleurs de la marque
 - ⬜ Cohérence globale header / footer / sections
 
@@ -125,10 +134,16 @@
 
 ## PHASE 6 — Déploiement
 
-- ⬜ Déployer sur Vercel
-- ⬜ Connecter les variables d'environnement Supabase sur Vercel
-- ⬜ Connecter le nom de domaine
+- ✅ Déployer sur Vercel (auto-deploy sur push main)
+- ✅ Connecter les variables d'environnement Supabase sur Vercel
+- ⬜ Connecter le nom de domaine marenov34.fr (DNS OVH → Vercel)
+- ⬜ Créer email pro contact@marenov34.fr dans OVH
+- ✅ Formulaire de contact : route API `/api/contact` avec Resend + validation serveur
+- ⬜ Formulaire de contact : ajouter `RESEND_API_KEY` dans `.env.local` et Vercel env vars
+- ⬜ Formulaire de contact : changer `to` → `ste.marenov@gmail.com` dans `/src/app/api/contact/route.js` (actuellement pointe sur l'adresse de test)
+- ⬜ Formulaire de contact : changer `from` → `contact@marenov34.fr` une fois domaine vérifié sur Resend
 - ⬜ Vérifier le formulaire de contact en production (envoi email réel)
+- ⬜ Re-uploader les photos existantes (compression WebP) + nettoyer Supabase Storage
 
 ---
 
