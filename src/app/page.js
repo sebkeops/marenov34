@@ -214,7 +214,7 @@ export default async function Home() {
                   <ul className="mt-3 space-y-2 text-[#c5d5df]">
                     {artisan.bullets.map((b, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <span className="mt-2 h-0.5 w-4 bg-white/20 rounded-full" />
+                        <span className="mt-1.5 h-2 w-2 shrink-0 bg-white rounded-sm" />
                         <span>{b}</span>
                       </li>
                     ))}
