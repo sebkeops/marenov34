@@ -1,23 +1,10 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-transparent text-[#d1d2d4] animate-pulse">
-      <div className="mx-auto max-w-6xl px-5 py-8">
-
-        {/* Retour */}
-        <div className="h-4 w-16 rounded bg-white/10" />
-
-        {/* Titre */}
-        <div className="mt-4 space-y-2">
-          <div className="h-7 w-56 rounded bg-white/10" />
-          <div className="h-4 w-80 rounded bg-white/10" />
-        </div>
-
-        {/* Grille photos */}
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="aspect-[4/3] rounded-2xl bg-white/10" />
-          ))}
-        </div>
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#20313c]">
+      <div className="flex flex-col items-center gap-4">
+        {/* Spinner */}
+        <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-white animate-spin" />
+        <p className="text-sm font-medium text-white/60 tracking-wide">Chargement…</p>
       </div>
     </div>
   );
