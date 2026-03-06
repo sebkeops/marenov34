@@ -178,7 +178,7 @@ export default async function Home() {
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
               {families.map((f, i) => (
                 <Reveal key={f.id} delay={i * 0.05}>
-                  <Link href={`/realisations/${f.id}`} className="block">
+                  <Link href={`/realisations/${f.slug}`} className="block">
                     <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
                       <div className="relative aspect-[4/3] bg-slate-100">
                         {f.cover_image_url && (

@@ -6,11 +6,11 @@ export default async function sitemap() {
   const supabase = createServerClient();
   const { data: families } = await supabase
     .from("families")
-    .select("id, updated_at")
+    .select("slug, updated_at")
     .order("order", { ascending: true });
 
   const familyUrls = (families || []).map((f) => ({
-    url: `${BASE_URL}/realisations/${f.id}`,
+    url: `${BASE_URL}/realisations/${f.slug}`,
     lastModified: f.updated_at ? new Date(f.updated_at) : new Date(),
     changeFrequency: "monthly",
     priority: 0.7,

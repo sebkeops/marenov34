@@ -4,7 +4,17 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import ImageUpload from "@/components/admin/ImageUpload";
 
-const EMPTY_FORM = { title: "", subtitle: "", cover_image_url: "" };
+const EMPTY_FORM = { title: "", subtitle: "", cover_image_url: "", slug: "" };
+
+function toSlug(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
 
 export default function AdminRealisationsPage() {
   const [families, setFamilies] = useState([]);
@@ -29,7 +39,7 @@ export default function AdminRealisationsPage() {
 
   function startEdit(f) {
     setEditingId(f.id);
-    setForm({ title: f.title, subtitle: f.subtitle, cover_image_url: f.cover_image_url });
+    setForm({ title: f.title, subtitle: f.subtitle, cover_image_url: f.cover_image_url, slug: f.slug || "" });
     setError("");
   }
 
@@ -49,6 +59,7 @@ export default function AdminRealisationsPage() {
       title: form.title.trim(),
       subtitle: form.subtitle.trim(),
       cover_image_url: form.cover_image_url,
+      slug: form.slug.trim() || toSlug(form.title.trim()),
       order: editingId
         ? families.find((f) => f.id === editingId)?.order ?? 0
         : families.length,
@@ -113,10 +124,30 @@ export default function AdminRealisationsPage() {
               <label className="text-sm font-medium text-slate-700">Titre *</label>
               <input
                 value={form.title}
-                onChange={(e) => setForm({ ...form, title: e.target.value })}
+                onChange={(e) => {
+                  const title = e.target.value;
+                  setForm((f) => ({
+                    ...f,
+                    title,
+                    slug: f.slug === toSlug(f.title) || f.slug === "" ? toSlug(title) : f.slug,
+                  }));
+                }}
                 className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-400"
                 placeholder="Ex : Portails aluminium"
               />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium text-slate-700">Slug (URL)</label>
+              <div className="mt-1 flex items-center rounded-xl border border-slate-200 focus-within:border-slate-400 overflow-hidden">
+                <span className="shrink-0 bg-slate-50 px-3 py-3 text-xs text-slate-400 border-r border-slate-200">/realisations/</span>
+                <input
+                  value={form.slug}
+                  onChange={(e) => setForm({ ...form, slug: e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, "") })}
+                  className="flex-1 px-3 py-3 text-sm outline-none"
+                  placeholder="portails-aluminium"
+                />
+              </div>
             </div>
 
             <div>

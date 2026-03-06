@@ -5,12 +5,12 @@ import { notFound } from "next/navigation";
 import PhotoGallery from "@/components/PhotoGallery";
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
+  const { slug } = await params;
   const supabase = createServerClient();
   const { data: family } = await supabase
     .from("families")
     .select("title, subtitle")
-    .eq("id", id)
+    .eq("slug", slug)
     .single();
 
   if (!family) return {};
@@ -23,20 +23,23 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function RealisationPage({ params }) {
-  const { id } = await params;
+  const { slug } = await params;
   const supabase = createServerClient();
   const site = getSite();
 
-  const [{ data: family }, { data: photos }] = await Promise.all([
-    supabase.from("families").select("*").eq("id", id).single(),
-    supabase
-      .from("family_photos")
-      .select("*")
-      .eq("family_id", id)
-      .order("order", { ascending: true }),
-  ]);
+  const { data: family } = await supabase
+    .from("families")
+    .select("*")
+    .eq("slug", slug)
+    .single();
 
   if (!family) notFound();
+
+  const { data: photos } = await supabase
+    .from("family_photos")
+    .select("*")
+    .eq("family_id", family.id)
+    .order("order", { ascending: true });
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
