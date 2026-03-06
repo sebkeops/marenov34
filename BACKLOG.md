@@ -99,12 +99,12 @@
 
 ## PHASE 4 — SEO & performance
 
-- ⬜ Métadonnées dynamiques par page (title, description)
-- ⬜ `og:image` pour le partage réseaux sociaux
-- ⬜ `sitemap.xml` généré automatiquement
-- ⬜ `robots.txt`
-- ⬜ Balises Schema.org `LocalBusiness`
-- ⬜ Lighthouse score cible : 90+
+- ✅ Métadonnées dynamiques par page (title, description)
+- ✅ `og:image` pour le partage réseaux sociaux
+- ✅ `sitemap.xml` généré automatiquement (inclut les pages réalisations)
+- ✅ `robots.txt` (bloque /admin, référence sitemap)
+- ✅ Balises Schema.org `LocalBusiness`
+- ⬜ Lighthouse score cible : 90+ (à mesurer après déploiement)
 
 ---
 

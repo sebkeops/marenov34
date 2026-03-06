@@ -4,6 +4,19 @@ import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
 
+export async function generateMetadata() {
+  const site = getSite();
+  return {
+    title: `${site.businessName} — Portail & Menuiserie à ${site.city}`,
+    description: `${site.tagline}. Plus de 20 ans d'expérience. ${site.serviceArea}. Devis gratuit.`,
+    openGraph: {
+      title: `${site.businessName} — Portail & Menuiserie à ${site.city}`,
+      description: `${site.tagline}. Plus de 20 ans d'expérience. ${site.serviceArea}. Devis gratuit.`,
+      url: "/",
+    },
+  };
+}
+
 export default async function Home() {
   const site = getSite();
   const supabase = createServerClient();
