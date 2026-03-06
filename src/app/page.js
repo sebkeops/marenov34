@@ -3,6 +3,7 @@ import { createServerClient } from "@/lib/supabase-server";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
+import Image from "next/image";
 
 export const dynamic = 'force-dynamic';
 
@@ -64,11 +65,13 @@ export default async function Home() {
       {/* HERO */}
       <section className="relative min-h-[520px] md:min-h-[460px]">
         <div className="absolute inset-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={site.heroImage || "/images/hero.jpg"}
             alt=""
-            className="h-full w-full object-cover"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>
@@ -127,9 +130,8 @@ export default async function Home() {
                 )}
               </div>
               {spotlight.image_url && (
-                <div className="hidden md:block h-16 w-24 shrink-0 overflow-hidden rounded-lg">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={spotlight.image_url} alt="" className="h-full w-full object-cover" />
+                <div className="relative hidden md:block h-16 w-24 shrink-0 overflow-hidden rounded-lg">
+                  <Image src={spotlight.image_url} alt="" fill className="object-cover" sizes="96px" />
                 </div>
               )}
             </div>
@@ -150,10 +152,9 @@ export default async function Home() {
               {services.map((s, i) => (
                 <Reveal key={s.id} delay={i * 0.05}>
                   <div className="flex h-full gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                    <div className="h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-slate-100 border border-slate-200">
+                    <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-slate-100 border border-slate-200">
                       {s.image_url && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={s.image_url} alt={s.title} className="h-full w-full object-cover" />
+                        <Image src={s.image_url} alt={s.title} fill className="object-cover" sizes="96px" />
                       )}
                     </div>
                     <div className="min-w-0">
@@ -184,11 +185,12 @@ export default async function Home() {
                     <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
                       <div className="relative aspect-[4/3] bg-slate-100">
                         {f.cover_image_url && (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
+                          <Image
                             src={f.cover_image_url}
                             alt={f.title}
-                            className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                            fill
+                            className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                            sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
                           />
                         )}
                       </div>
@@ -212,12 +214,13 @@ export default async function Home() {
         <section className="px-5 py-12 border-t border-slate-100 bg-slate-50/70">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-6 md:grid-cols-[180px_1fr] items-start">
-              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm h-40 md:h-44">
+                <Image
                   src={artisan.photo_url || "/images/about.jpg"}
                   alt="Artisan menuisier"
-                  className="h-40 md:h-44 w-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="180px"
                 />
               </div>
 
