@@ -19,36 +19,36 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-6 rounded-2xl border border-slate-200 p-5"
+      className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
     >
       <div className="grid gap-4">
         <div>
-          <label className="text-sm font-medium">Nom</label>
+          <label className="text-sm font-medium text-slate-700">Nom</label>
           <input
             name="name"
             required
-            className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-400"
+            className="mt-1 w-full rounded-xl border border-slate-200 bg-[#d1d2d4] px-4 py-3 text-slate-900 outline-none focus:border-slate-400"
             placeholder="Votre nom"
           />
         </div>
 
         <div>
-          <label className="text-sm font-medium">Téléphone</label>
+          <label className="text-sm font-medium text-slate-700">Téléphone</label>
           <input
             name="phone"
             required
-            className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-400"
+            className="mt-1 w-full rounded-xl border border-slate-200 bg-[#d1d2d4] px-4 py-3 text-slate-900 outline-none focus:border-slate-400"
             placeholder="06 …"
           />
         </div>
 
         <div>
-          <label className="text-sm font-medium">Votre projet</label>
+          <label className="text-sm font-medium text-slate-700">Votre projet</label>
           <textarea
             name="message"
             required
             rows={5}
-            className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-400"
+            className="mt-1 w-full rounded-xl border border-slate-200 bg-[#d1d2d4] px-4 py-3 text-slate-900 outline-none focus:border-slate-400"
             placeholder="Ex : dressing sur mesure, dimensions, ville, délai…"
           />
         </div>
@@ -57,7 +57,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full md:w-auto rounded-xl bg-slate-900 px-6 py-3 font-medium text-white transition hover:bg-slate-800 disabled:opacity-60"
+            className="w-full md:w-auto rounded-xl bg-brand px-6 py-3 font-medium text-white transition hover:bg-brand-hover disabled:opacity-60"
           >
             {loading ? "Envoi..." : "Envoyer"}
           </button>
