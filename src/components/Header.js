@@ -5,8 +5,8 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 
 const NAV_LINKS = [
-  { label: "Nos services", href: "#services" },
-  { label: "Réalisations", href: "#realisations" },
+  { label: "Nos services", href: "/#services" },
+  { label: "Réalisations", href: "/#realisations" },
 ];
 
 export default function Header({ phone }) {
