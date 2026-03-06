@@ -13,6 +13,7 @@ export async function generateMetadata() {
       title: `${site.businessName} — Portail & Menuiserie à ${site.city}`,
       description: `${site.tagline}. Plus de 20 ans d'expérience. ${site.serviceArea}. Devis gratuit.`,
       url: "/",
+      images: [{ url: "/images/hero.jpg", width: 1200, height: 630, alt: `${site.businessName} — Artisan menuisier à ${site.city}` }],
     },
   };
 }
