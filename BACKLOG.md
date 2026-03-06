@@ -107,7 +107,7 @@
 - ✅ URLs slugs pour les réalisations (`/realisations/clotures` au lieu de l'UUID)
 - ✅ Pages publiques en `force-dynamic` (modifications admin visibles sans redéploiement)
 - ✅ Email artisan dans le footer
-- ⬜ Lighthouse score cible : 90+ (à mesurer après déploiement)
+- ✅ Lighthouse score : 98 Performance / 96 Accessibilité / 100 Bonnes pratiques / 100 SEO
 
 ---
 
