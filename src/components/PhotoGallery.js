@@ -2,6 +2,14 @@
 
 import { useState, useEffect, useCallback } from "react";
 
+// Transforme une URL Supabase Storage en URL redimensionnée
+function thumbUrl(url, width = 800, quality = 75) {
+  if (!url || !url.includes("/storage/v1/object/public/")) return url;
+  return url
+    .replace("/storage/v1/object/public/", "/storage/v1/render/image/public/")
+    + `?width=${width}&quality=${quality}`;
+}
+
 export default function PhotoGallery({ photos, familyTitle }) {
   const [lightbox, setLightbox] = useState(null);
   const [loaded, setLoaded] = useState(0);
@@ -63,9 +71,10 @@ export default function PhotoGallery({ photos, familyTitle }) {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={photo.image_url}
+              src={thumbUrl(photo.image_url)}
               alt={photo.caption || familyTitle}
               className="w-full object-cover transition duration-300 md:hover:scale-[1.02]"
+              loading="lazy"
               onLoad={() => setLoaded((n) => n + 1)}
               onError={() => setLoaded((n) => n + 1)}
             />
