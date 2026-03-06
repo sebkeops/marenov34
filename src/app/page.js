@@ -72,13 +72,13 @@ export default async function Home() {
             <div className="mt-7 flex flex-col gap-3 md:flex-row md:items-center">
               <a
                 href={`tel:${site.phone.replaceAll(" ", "")}`}
-                className="inline-flex w-full items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-sm md:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-xl bg-white px-6 py-3 font-semibold text-brand shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md md:w-auto"
               >
                 Appeler
               </a>
               <a
                 href="#contact"
-                className="inline-flex w-full items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur md:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/20 hover:border-white/50 md:w-auto"
               >
                 {site.ctaPrimary}
               </a>
@@ -139,7 +139,7 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold text-slate-900">{s.title}</div>
+                      <div className="text-sm font-semibold text-brand">{s.title}</div>
                       <div className="mt-1 text-sm text-slate-600">{s.subtitle}</div>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default async function Home() {
                         )}
                       </div>
                       <div className="flex flex-col justify-center p-5 min-h-[64px]">
-                        <div className="text-sm font-semibold leading-snug text-slate-900">{f.title}</div>
+                        <div className="text-sm font-semibold leading-snug text-brand">{f.title}</div>
                         {f.subtitle && (
                           <div className="mt-1 line-clamp-2 text-sm text-slate-600">{f.subtitle}</div>
                         )}

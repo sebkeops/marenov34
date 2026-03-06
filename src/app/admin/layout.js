@@ -34,5 +34,5 @@ export default function AdminLayout({ children }) {
     };
   }, [router]);
 
-  return <>{children}</>;
+  return <div className="text-slate-900">{children}</div>;
 }

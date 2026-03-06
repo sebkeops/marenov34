@@ -20,7 +20,7 @@ export default function Header({ phone }) {
         <div className="mx-auto flex max-w-6xl items-center justify-end gap-6 px-5 py-1.5">
           <a
             href={`tel:${phone.replaceAll(" ", "")}`}
-            className="flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition"
+            className="flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-brand transition"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.338a16.128 16.128 0 0 1 4.004-1.582c.518-.124.99.21 1.09.726l.527 2.803a1.125 1.125 0 0 1-.577 1.194l-1.397.698a13.515 13.515 0 0 0 5.978 5.978l.698-1.397a1.125 1.125 0 0 1 1.194-.577l2.803.527c.516.1.85.572.726 1.09a16.128 16.128 0 0 1-1.582 4.004C17.25 20.818 14.763 22 12 22 6.477 22 2 17.523 2 12c0-2.763 1.182-5.25 3.338-6.662z" />
@@ -29,7 +29,7 @@ export default function Header({ phone }) {
           </a>
           <a
             href="#contact"
-            className="rounded-lg bg-brand px-4 py-1.5 text-sm font-medium text-white hover:bg-brand-hover transition"
+            className="rounded-lg bg-brand px-4 py-1.5 text-sm font-medium text-white transition-all duration-200 hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-md"
           >
             Devis gratuit
           </a>
@@ -51,7 +51,7 @@ export default function Header({ phone }) {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium uppercase tracking-wide text-slate-600 hover:text-slate-900 transition"
+                className="text-sm font-medium uppercase tracking-wide text-slate-600 hover:text-brand transition"
               >
                 {link.label}
               </a>
@@ -79,7 +79,7 @@ export default function Header({ phone }) {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 transition border-b border-slate-100 last:border-0"
+              className="py-2.5 text-sm font-medium text-slate-700 hover:text-brand transition border-b border-slate-100 last:border-0"
             >
               {link.label}
             </a>

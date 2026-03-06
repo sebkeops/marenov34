@@ -11,8 +11,8 @@
   /* Brand navy — identité M.A Rénov */
   --color-brand: #2C3A47;
   --color-brand-hover: #243040;
-  /* Police active : changer var(--font-raleway) → var(--font-josefin) pour comparer */
-  --font-sans: var(--font-raleway);
+  /* Police active : var(--font-josefin) ou var(--font-raleway) */
+  --font-sans: var(--font-josefin);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -23,7 +23,7 @@ body {
   background-repeat: repeat;
   background-size: auto;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
 
 html {

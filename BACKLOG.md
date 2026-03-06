@@ -124,10 +124,14 @@
 
 > À appliquer en dernière passe sur l'ensemble du site.
 
-- ⬜ Remplacer la couleur principale `slate-900` par le bleu marine de la marque (~`#2C3A47`)
-- ⬜ Intégrer la police Google Fonts (Raleway ou Josefin Sans)
+- ✅ Remplacer la couleur principale `slate-900` par le bleu marine de la marque (~`#2C3A47`)
+- ✅ Intégrer la police Google Fonts (Josefin Sans)
 - ✅ Intégrer le logo dans le header (composant Logo.js)
-- ⬜ Favicon aux couleurs de la marque
+- ✅ Favicon aux couleurs de la marque
+- ✅ Animations hover sur les boutons (header + hero)
+- ✅ Logo "Fabriqué en France" dans la section artisan
+- ✅ Formulaire de contact avec validation côté client et serveur
+- ✅ Lisibilité inputs admin (correction héritage couleur body)
 - ⬜ Cohérence globale header / footer / sections
 
 ---
@@ -139,7 +143,7 @@
 - ⬜ Connecter le nom de domaine marenov34.fr (DNS OVH → Vercel)
 - ⬜ Créer email pro contact@marenov34.fr dans OVH
 - ✅ Formulaire de contact : route API `/api/contact` avec Resend + validation serveur
-- ⬜ Formulaire de contact : ajouter `RESEND_API_KEY` dans `.env.local` et Vercel env vars
+- ✅ Formulaire de contact : ajouter `RESEND_API_KEY` dans `.env.local` et Vercel env vars
 - ⬜ Formulaire de contact : changer `to` → `ste.marenov@gmail.com` dans `/src/app/api/contact/route.js` (actuellement pointe sur l'adresse de test)
 - ⬜ Formulaire de contact : changer `from` → `contact@marenov34.fr` une fois domaine vérifié sur Resend
 - ⬜ Vérifier le formulaire de contact en production (envoi email réel)
