@@ -132,7 +132,7 @@
 - ✅ Logo "Fabriqué en France" dans la section artisan
 - ✅ Formulaire de contact avec validation côté client et serveur
 - ✅ Lisibilité inputs admin (correction héritage couleur body)
-- ⬜ Cohérence globale header / footer / sections
+- ✅ Cohérence globale header / footer / sections
 
 ---
 
