@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PhotoGallery from "@/components/PhotoGallery";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const supabase = createServerClient();
@@ -122,10 +124,17 @@ export default async function RealisationPage({ params }) {
           </div>
           <div>
             <div className="font-semibold text-white">Contact</div>
-            <div className="mt-2">
-              <a className="text-slate-300 hover:text-white transition" href={`tel:${site.phone.replaceAll(" ", "")}`}>
-                {site.phone}
-              </a>
+            <div className="mt-2 space-y-1">
+              <div>
+                <a className="text-slate-300 hover:text-white transition" href={`tel:${site.phone.replaceAll(" ", "")}`}>
+                  {site.phone}
+                </a>
+              </div>
+              <div>
+                <a className="text-slate-300 hover:text-white transition" href={`mailto:${site.email}`}>
+                  {site.email}
+                </a>
+              </div>
             </div>
           </div>
         </div>

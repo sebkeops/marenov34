@@ -12,7 +12,7 @@ describe("Phase 3 — fichiers requis", () => {
   const requiredFiles = [
     'src/lib/supabase-server.js',
     'src/app/page.js',
-    'src/app/realisations/[id]/page.js',
+    'src/app/realisations/[slug]/page.js',
   ]
 
   requiredFiles.forEach((file) => {
@@ -90,9 +90,9 @@ describe("page.js — page d'accueil", () => {
 
 // ─── page galerie /realisations/[id] ─────────────────────────
 
-describe("page galerie realisations/[id]", () => {
+describe("page galerie realisations/[slug]", () => {
   const content = fs.readFileSync(
-    path.join(process.cwd(), 'src/app/realisations/[id]/page.js'),
+    path.join(process.cwd(), 'src/app/realisations/[slug]/page.js'),
     'utf-8'
   )
 

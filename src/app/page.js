@@ -4,6 +4,8 @@ import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata() {
   const site = getSite();
   return {
@@ -305,10 +307,17 @@ export default async function Home() {
           </div>
           <div>
             <div className="font-semibold text-white">Contact</div>
-            <div className="mt-2">
-              <a className="text-slate-300 hover:text-white transition" href={`tel:${site.phone.replaceAll(" ", "")}`}>
-                {site.phone}
-              </a>
+            <div className="mt-2 space-y-1">
+              <div>
+                <a className="text-slate-300 hover:text-white transition" href={`tel:${site.phone.replaceAll(" ", "")}`}>
+                  {site.phone}
+                </a>
+              </div>
+              <div>
+                <a className="text-slate-300 hover:text-white transition" href={`mailto:${site.email}`}>
+                  {site.email}
+                </a>
+              </div>
             </div>
           </div>
         </div>
