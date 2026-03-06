@@ -73,7 +73,7 @@ export default function Header({ phone }) {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden border-b border-slate-200 bg-slate-50 px-5 py-3 flex flex-col gap-1">
+        <div className="md:hidden border-b border-slate-200 bg-blue-100 px-5 py-3 flex flex-col gap-1">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
