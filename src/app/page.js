@@ -93,7 +93,7 @@ export default async function Home() {
 
       {/* À LA UNE */}
       {spotlight?.visible && (
-        <section className="bg-blue-100/50 border-y border-blue-200">
+        <section className="bg-blue-100/40 border-y border-blue-200">
           <Reveal>
             <div className="mx-auto max-w-6xl px-5 py-8 flex flex-col gap-3 md:flex-row md:items-center md:justify-center md:gap-8">
               <div className="shrink-0">
