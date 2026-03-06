@@ -74,7 +74,6 @@ export default function PhotoGallery({ photos, familyTitle }) {
               src={thumbUrl(photo.image_url)}
               alt={photo.caption || familyTitle}
               className="w-full object-cover transition duration-300 md:hover:scale-[1.02]"
-              loading="lazy"
               onLoad={() => setLoaded((n) => n + 1)}
               onError={() => setLoaded((n) => n + 1)}
             />
