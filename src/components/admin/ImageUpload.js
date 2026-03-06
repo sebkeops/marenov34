@@ -3,6 +3,27 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
+function compressImage(file, maxWidth = 1920, quality = 0.82) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      let { width, height } = img;
+      if (width > maxWidth) {
+        height = Math.round((height * maxWidth) / width);
+        width = maxWidth;
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+      canvas.toBlob(resolve, "image/webp", quality);
+    };
+    img.src = url;
+  });
+}
+
 export default function ImageUpload({ currentUrl, onUploaded, folder = "misc" }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
@@ -20,12 +41,12 @@ export default function ImageUpload({ currentUrl, onUploaded, folder = "misc" })
     setUploading(true);
     setError("");
 
-    const ext = file.name.split(".").pop();
-    const filename = `${folder}/${Date.now()}.${ext}`;
+    const compressed = await compressImage(file);
+    const filename = `${folder}/${Date.now()}.webp`;
 
     const { error: uploadError } = await supabase.storage
       .from("images")
-      .upload(filename, file, { upsert: true });
+      .upload(filename, compressed, { contentType: "image/webp", upsert: true });
 
     if (uploadError) {
       setError("Erreur lors de l'upload.");
