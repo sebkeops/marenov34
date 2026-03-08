@@ -51,7 +51,7 @@ export default async function RealisationPage({ params }) {
 
       <div className="mx-auto max-w-6xl px-5 py-8">
         <Link
-          href="/"
+          href="/#realisations"
           className="inline-flex items-center gap-1.5 text-sm text-[#d1d2d4] hover:text-white transition"
         >
           ← Retour
@@ -71,6 +71,15 @@ export default async function RealisationPage({ params }) {
             <p>Aucune photo pour le moment.</p>
           </div>
         )}
+
+        <div className="mt-8 md:hidden">
+          <Link
+            href="/#realisations"
+            className="inline-flex items-center gap-1.5 text-sm text-[#d1d2d4] hover:text-white transition"
+          >
+            ← Retour
+          </Link>
+        </div>
       </div>
 
       {/* BARRE D'ACTION (mobile) */}
