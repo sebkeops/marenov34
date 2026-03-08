@@ -140,14 +140,14 @@
 
 - ✅ Déployer sur Vercel (auto-deploy sur push main)
 - ✅ Connecter les variables d'environnement Supabase sur Vercel
-- ⬜ Connecter le nom de domaine marenov34.fr (DNS OVH → Vercel)
+- ✅ Connecter le nom de domaine marenov34.fr (DNS OVH → Vercel)
 - ⬜ Créer email pro contact@marenov34.fr dans OVH
 - ✅ Formulaire de contact : route API `/api/contact` avec Resend + validation serveur
 - ✅ Formulaire de contact : ajouter `RESEND_API_KEY` dans `.env.local` et Vercel env vars
-- ⬜ Formulaire de contact : changer `to` → `ste.marenov@gmail.com` dans `/src/app/api/contact/route.js` (actuellement pointe sur l'adresse de test)
-- ⬜ Formulaire de contact : changer `from` → `contact@marenov34.fr` une fois domaine vérifié sur Resend
-- ⬜ Vérifier le formulaire de contact en production (envoi email réel)
-- ⬜ Re-uploader les photos existantes (compression WebP) + nettoyer Supabase Storage
+- ✅ Formulaire de contact : changer `to` → `ste.marenov@gmail.com`
+- ✅ Formulaire de contact : changer `from` → `contact@marenov34.fr` (domaine vérifié sur Resend)
+- ✅ Vérifier le formulaire de contact en production (envoi email réel)
+e - ⬜ Re-uploader les photos existantes (compression WebP) + nettoyer Supabase Storage
 
 ---
 
