@@ -117,6 +117,11 @@
 - ✅ Pages publiques en `force-dynamic` (modifications admin visibles sans redéploiement)
 - ✅ Email artisan dans le footer
 - ✅ Lighthouse score : 98 Performance / 96 Accessibilité / 100 Bonnes pratiques / 100 SEO
+- ✅ Google Search Console : propriété vérifiée + sitemap soumis
+- ✅ Fix `metadataBase` dans `layout.js` : pointe encore sur `marenov34.vercel.app` → corriger vers `marenov34.fr`
+- ✅ Fix URL sitemap dans `robots.js` : pointe encore sur `marenov34.vercel.app` → corriger vers `marenov34.fr`
+- ✅ Fix Schema.org `url` dans `layout.js` : même problème
+- ⬜ Google Business Profile : vérifier publication fiche M.A Rénov + ajouter URL site
 
 ---
 
@@ -151,9 +156,32 @@ e - ⬜ Re-uploader les photos existantes (compression WebP) + nettoyer Supabase
 
 ---
 
+## PHASE 7 — Optimisations post-audit
+
+### Sécurité
+- ⬜ API contact : rate limiting (protection spam/DoS)
+- ⬜ API contact : limite de longueur sur les champs (max 5000 chars pour message)
+- ⬜ API contact : ne pas retourner l'erreur Resend brute au navigateur
+- ⬜ Suppression admin : supprimer fichier Supabase Storage en même temps que l'entrée BDD
+
+### Performance & images
+- ⬜ `PhotoGallery.js` : remplacer `<img>` natifs par `next/image`
+- ⬜ `Logo.js` : supprimer `unoptimized={true}`
+- ⬜ `layout.js` : supprimer import `Geist_Mono` inutilisé
+- ⬜ Re-uploader les photos existantes (compression WebP) + nettoyer Supabase Storage
+
+### Maintenabilité
+- ⬜ Extraire le footer en composant réutilisable `<Footer />`
+- ⬜ Extraire la barre d'action mobile en composant `<MobileActionBar />`
+
+### Accessibilité
+- ⬜ Image héros : ajouter `alt` descriptif
+- ⬜ `PhotoGallery.js` : rendre la lightbox accessible sur mobile (tactile)
+
+---
+
 ## Backlog technique transverse
 
-- ⬜ Git flow : branches `main` (prod), `dev`, features en `feat/...`
 - ⬜ Prettier configuré
 - ⬜ Variables d'environnement dans `.env.local` (jamais committé)
 - ⬜ Validation des inputs côté serveur sur toutes les routes API

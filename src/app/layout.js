@@ -26,7 +26,7 @@ export const metadata = {
     template: "%s — M.A Rénov",
   },
   description: "Artisan menuisier aluminium / PVC depuis 2014. Portails sur mesure, clôtures, menuiseries, volets roulants. Restinclières et 50 km aux alentours. Devis gratuit.",
-  metadataBase: new URL("https://marenov34.vercel.app"),
+  metadataBase: new URL("https://marenov34.fr"),
   openGraph: {
     siteName: "M.A Rénov",
     locale: "fr_FR",
@@ -52,7 +52,7 @@ const jsonLd = {
   },
   "areaServed": "Restinclières et 50 km aux alentours",
   "priceRange": "€€",
-  "url": "https://marenov34.vercel.app",
+  "url": "https://marenov34.fr",
 };
 
 export default function RootLayout({ children }) {

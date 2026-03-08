@@ -7,6 +7,6 @@ export default function robots() {
         disallow: "/admin",
       },
     ],
-    sitemap: "https://marenov34.vercel.app/sitemap.xml",
+    sitemap: "https://marenov34.fr/sitemap.xml",
   };
 }
