@@ -1,6 +1,6 @@
 import { createServerClient } from "@/lib/supabase-server";
 
-const BASE_URL = "https://marenov34.vercel.app";
+const BASE_URL = "https://marenov34.fr";
 
 export default async function sitemap() {
   const supabase = createServerClient();
