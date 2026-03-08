@@ -298,7 +298,8 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl grid gap-8 px-5 py-12 text-sm md:grid-cols-3 md:items-start">
           <div>
             <div className="font-semibold text-white">{site.businessName}</div>
-            <div className="mt-2 text-slate-400">Artisan menuisier à {site.city}</div>
+            <div className="text-slate-400">Johan GUERY</div>
+            <div className="mt-1 text-slate-400">Artisan menuisier</div>
           </div>
           <div>
             <div className="pl-6 font-semibold text-white">Zone d&apos;intervention</div>
