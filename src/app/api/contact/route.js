@@ -10,9 +10,8 @@ export async function POST(req) {
   }
 
   const { error } = await resend.emails.send({
-    // Remplacer par contact@marenov34.fr une fois le domaine vérifié sur Resend
-    from: "Contact Site <onboarding@resend.dev>",
-    to: "siguenza010987@gmail.com", // TODO: remplacer par ste.marenov@gmail.com une fois le domaine vérifié
+    from: "Contact Site <contact@marenov34.fr>",
+    to: "ste.marenov@gmail.com",
     subject: `Nouveau message de ${name}`,
     text: `Nom : ${name}\nTéléphone : ${phone}\n\nMessage :\n${message}`,
   });
